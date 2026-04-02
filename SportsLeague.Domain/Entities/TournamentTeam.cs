@@ -4,7 +4,7 @@
     {
         public int TournamentId { get; set;}
         public int TeamId { get; set; }
-        public DateTime RegisteredAt { get; set; } = DateTime.Now;
+        public DateTime RegisteredAt { get; set; } = DateTime.UtcNow;
 
         //Navigation Properties
         public Tournament Tournament { get; set; } = null!;
