@@ -31,7 +31,7 @@ namespace SportsLeague.DataAccess.Repositories
             entity.CreatedAt = DateTime.UtcNow;
             entity.UpdatedAt = null;
             await _dbSet.AddAsync(entity);
-            await _context.SaveChangesAsync(); //Este método SaveChangesAsync () es crucial para que los cambios se reflejen en la base de datos.
+            await _context.SaveChangesAsync();
             return entity;
         }
 
