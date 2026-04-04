@@ -2,13 +2,10 @@
 using SportsLeague.DataAccess.Context;
 using SportsLeague.Domain.Entities;
 using SportsLeague.Domain.Interfaces.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SportsLeague.DataAccess.Repositories
 {
-    public class TournamentTeamRepository: GenericRepository<TournamentTeam>, ITournamentTeamRepository
+    public class TournamentTeamRepository : GenericRepository<TournamentTeam>, ITournamentTeamRepository
     {
         public TournamentTeamRepository(LeagueDbContext context) : base(context)
         {
