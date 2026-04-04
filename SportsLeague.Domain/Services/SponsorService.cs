@@ -162,6 +162,12 @@ namespace SportsLeague.Domain.Services
                     .Select(st => st.Tournament);
         }
 
+        public async Task<IEnumerable<Sponsor>> GetByCategoryAsync(SponsorCategory category)
+        {
+            _logger.LogInformation("Obteniendo Sponsors por categoría {Category}", category);
+            return await _sponsorRepository.GetByCategoryAsync(category);
+        }
+
         public async Task DeleteTournamentSponsorshipAsync(int sponsorId, int tournamentId)
         {
             var relationship = await _tournamentSponsorRepository.GetByTournamentAndSponsorAsync(tournamentId,sponsorId);

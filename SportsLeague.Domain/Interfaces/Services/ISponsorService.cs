@@ -1,4 +1,5 @@
 ﻿using SportsLeague.Domain.Entities;
+using SportsLeague.Domain.Enums;
 
 
 namespace SportsLeague.Domain.Interfaces.Services
@@ -13,5 +14,6 @@ namespace SportsLeague.Domain.Interfaces.Services
         Task RegisterTournamentAsync(int sponsorId, int tournamentId, decimal contractAmount);
         Task<IEnumerable<Tournament>> GetTournamentsBySponsorAsync(int sponsorId);
         Task DeleteTournamentSponsorshipAsync(int sponsorId, int tournamentId);
+        Task<IEnumerable<Sponsor>> GetByCategoryAsync(SponsorCategory category);
     }
 }

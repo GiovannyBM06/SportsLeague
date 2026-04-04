@@ -4,6 +4,7 @@ using SportsLeague.API.DTOs.Request;
 using SportsLeague.API.DTOs.Response;
 using SportsLeague.Domain.Entities;
 using SportsLeague.Domain.Interfaces.Services;
+using SportsLeague.Domain.Enums;
 namespace SportsLeague.API.Controllers
 {
     [ApiController]
@@ -116,6 +117,13 @@ namespace SportsLeague.API.Controllers
                 return NoContent();
             }
             catch (KeyNotFoundException ex){return NotFound(new { message = ex.Message });}
+        }
+
+        [HttpGet("category/{category}")]
+        public async Task<ActionResult<IEnumerable<SponsorResponseDTO>>> GetByCategory(SponsorCategory category)
+        {
+            var sponsors = await _sponsorService.GetByCategoryAsync(category);
+            return Ok(_mapper.Map<IEnumerable<SponsorResponseDTO>>(sponsors));
         }
     }
 }
