@@ -16,14 +16,6 @@ namespace SportsLeague.DataAccess.Repositories
                 .Where(ts => ts.TournamentId == tournamentId && ts.SponsorId == sponsorId)
                 .FirstOrDefaultAsync();
         }
-        // obtener todos los patrocinadores asociados a un torneo específico
-        public async Task<IEnumerable<TournamentSponsor>> GetByTournamentAsync(int tournamentId)
-        {
-            return await _dbSet
-                .Where(ts => ts.TournamentId == tournamentId)
-                .Include(ts=>ts.Sponsor)
-                .ToListAsync();
-        }
         //obtener todos los torneos asociados a un patrocinador específico
         public async Task<IEnumerable<TournamentSponsor>> GetBySponsorAsync (int sponsorId)
         {
