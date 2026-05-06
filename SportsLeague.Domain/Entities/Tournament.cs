@@ -13,7 +13,8 @@ namespace SportsLeague.Domain.Entities
         // Navigation Properites
 
         public ICollection<TournamentTeam> TournamentTeams { get; set; } = new List<TournamentTeam>();
-        public ICollection<TournamentSponsor> TournamentSponsors { get; set; } = new List<TournamentSponsor>(); // para conectar con la tabla intermedia TournamentSponsor
+        public ICollection<TournamentSponsor> TournamentSponsors { get; set; } = new List<TournamentSponsor>();
+        public ICollection<Match> Matches { get; set; } = new List<Match>();
 
     }
 }
