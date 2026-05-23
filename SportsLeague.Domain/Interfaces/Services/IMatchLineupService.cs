@@ -7,7 +7,6 @@ namespace SportsLeague.Domain.Interfaces.Services
         Task<IEnumerable<MatchLineup>> GetByMacthAsync(int MacthId);
         Task<IEnumerable<MatchLineup>> GetByMacthAndTeamAsync(int MacthId, int TeamId);
         Task<MatchLineup> CreateAsync(MatchLineup MatchLineup);
-        // Task UpdateAsync(int id, MatchLineup MatchLineup);
         Task DeleteAsync(int id);
     }
 }
